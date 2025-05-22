@@ -2,7 +2,10 @@
 
 ---
 
-###Latar Belakang
+# Project Overview
+
+---
+
 Kualitas air kolam merupakan faktor krusial dalam keberhasilan budidaya ikan. Parameter seperti pH, suhu, dan tingkat kekeruhan air sangat mempengaruhi kesehatan dan pertumbuhan ikan. Kondisi air yang tidak sesuai dapat menyebabkan stres, penyakit, bahkan kematian pada ikan. Oleh karena itu, pemantauan kualitas air secara berkala sangat diperlukan untuk menjaga keberlangsungan ekosistem kolam dan meningkatkan produktivitas budidaya.
 
 Namun, pengawasan kualitas air secara manual membutuhkan waktu, tenaga, dan keterampilan teknis yang tidak sedikit. Di sisi lain, perkembangan teknologi analisis data dan machine learning saat ini memungkinkan pemanfaatan data historis untuk membangun model prediktif yang dapat membantu dalam pengambilan keputusan secara cepat dan akurat.
@@ -11,7 +14,7 @@ Melalui proyek ini, dikembangkan sebuah model klasifikasi prediktif untuk menila
 
 Hasil dari proyek ini diharapkan dapat memberikan solusi berbasis data untuk mempermudah pemilik kolam dalam memantau kualitas air dan mengambil tindakan preventif secara efisien, sehingga mendukung praktik budidaya ikan yang lebih sehat, produktif, dan berkelanjutan.
 
-###Problem Statements
+# Business Understanding
 
 
 1.   Kualitas air kolam yang buruk dapat menyebabkan pertumbuhan ikan terganggu, stres, bahkan kematian, yang berdampak pada kerugian ekonomi bagi pembudidaya.
