@@ -20,7 +20,7 @@ Hasil dari proyek ini diharapkan dapat memberikan solusi berbasis data untuk mem
 1.   Kualitas air kolam yang buruk dapat menyebabkan pertumbuhan ikan terganggu, stres, bahkan kematian, yang berdampak pada kerugian ekonomi bagi pembudidaya.
 2.   Pemantauan kualitas air secara manual membutuhkan waktu, tenaga, dan keahlian yang tidak semua pemilik kolam miliki.
 
-###Goals
+## Goals
 
 Mengembangkan sebuah model dalam memprediksi tingkat kualitas air kolam berdasarkan parameter pH, suhu, kekeruhan, dan jenis ikan. Dengan adanya model ini, pemilik kolam dapat memperoleh informasi prediktif secara langsung dari data pemantauan, sehingga dapat mengambil tindakan lebih cepat dan efisien dalam menjaga kualitas air kolam dan kesehatan ikan.
 
