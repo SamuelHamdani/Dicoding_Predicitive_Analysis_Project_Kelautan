@@ -120,66 +120,66 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
 
 1. K-Nearest Neighbors (KNN)
 
-    Cara Kerja: KNN mengklasifikasikan data baru berdasarkan kemiripan (jarak) dengan data-data lain di sekitarnya. Model ini menghitung jarak ke k tetangga terdekat dan menentukan label berdasarkan mayoritas tetangga.
-
-  Parameter Utama:
-  - n_neighbors: jumlah tetangga yang digunakan untuk klasifikasi.
-
-  - metric: jenis jarak yang digunakan (default: euclidean).
-
-  Kelebihan:
-  - Sederhana dan mudah diimplementasikan.
-
-  - Tidak memerlukan pelatihan secara eksplisit (lazy learner).
-
-  Kekurangan:
-  - Sensitif terhadap skala data dan outlier.
-
-  - Kurang efisien untuk dataset besar karena menghitung jarak ke semua titik.
+        Cara Kerja: KNN mengklasifikasikan data baru berdasarkan kemiripan (jarak) dengan data-data lain di sekitarnya. Model ini menghitung jarak ke k tetangga terdekat dan menentukan label berdasarkan mayoritas tetangga.
+    
+      Parameter Utama:
+      - n_neighbors: jumlah tetangga yang digunakan untuk klasifikasi.
+    
+      - metric: jenis jarak yang digunakan (default: euclidean).
+    
+      Kelebihan:
+      - Sederhana dan mudah diimplementasikan.
+    
+      - Tidak memerlukan pelatihan secara eksplisit (lazy learner).
+    
+      Kekurangan:
+      - Sensitif terhadap skala data dan outlier.
+    
+      - Kurang efisien untuk dataset besar karena menghitung jarak ke semua titik.
 
 2. Random Forest
   
-    Cara Kerja: Random Forest merupakan model ensemble yang terdiri dari banyak pohon keputusan (decision tree). Model ini menghasilkan prediksi berdasarkan voting mayoritas dari seluruh pohon yang dibentuk dari subset data dan fitur yang berbeda.
-
-  Parameter Utama:
-  - n_estimators: jumlah pohon yang digunakan (default: 100).
-
-  - max_depth: kedalaman maksimum tiap pohon.
-
-  - random_state: penetapan seed untuk replikasi hasil.
-
-  Kelebihan:
-  - Memiliki akurasi tinggi dan tahan terhadap overfitting.
-  
-  - Dapat menangani data kategorikal dan numerik.
-
-  - Memberikan informasi pentingnya fitur (feature importance).
-
-  Kekurangan:
-  - Cenderung lebih lambat dalam prediksi dibanding model sederhana.
-
-  - Kurang interpretatif dibanding model tunggal seperti decision tree.
+        Cara Kerja: Random Forest merupakan model ensemble yang terdiri dari banyak pohon keputusan (decision tree). Model ini menghasilkan prediksi berdasarkan voting mayoritas dari seluruh pohon yang dibentuk dari subset data dan fitur yang berbeda.
+    
+      Parameter Utama:
+      - n_estimators: jumlah pohon yang digunakan (default: 100).
+    
+      - max_depth: kedalaman maksimum tiap pohon.
+    
+      - random_state: penetapan seed untuk replikasi hasil.
+    
+      Kelebihan:
+      - Memiliki akurasi tinggi dan tahan terhadap overfitting.
+      
+      - Dapat menangani data kategorikal dan numerik.
+    
+      - Memberikan informasi pentingnya fitur (feature importance).
+    
+      Kekurangan:
+      - Cenderung lebih lambat dalam prediksi dibanding model sederhana.
+    
+      - Kurang interpretatif dibanding model tunggal seperti decision tree.
 
 3. AdaBoost
 
-    Cara Kerja: AdaBoost (Adaptive Boosting) adalah algoritma boosting yang membentuk model kuat dari beberapa model lemah (weak learners), biasanya decision tree sederhana. Model ini menekankan pada kesalahan dari prediksi sebelumnya dan memperbaikinya pada iterasi berikutnya.
-
-  Parameter Utama:
-  - n_estimators: jumlah model lemah yang akan digabungkan.
-
-  - learning_rate: menentukan kontribusi masing-masing model.
-
-  - random_state: agar hasil dapat direproduksi.
-
-  Kelebihan:
-  - Meningkatkan akurasi model sederhana.
-
-  - Cukup efektif untuk dataset kecil sampai menengah.
-
-  Kekurangan:
-  - Sensitif terhadap outlier dan noise dalam data.
-
-  - Bisa overfitting jika jumlah estimasi terlalu tinggi.
+        Cara Kerja: AdaBoost (Adaptive Boosting) adalah algoritma boosting yang membentuk model kuat dari beberapa model lemah (weak learners), biasanya decision tree sederhana. Model ini menekankan pada kesalahan dari prediksi sebelumnya dan memperbaikinya pada iterasi berikutnya.
+    
+      Parameter Utama:
+      - n_estimators: jumlah model lemah yang akan digabungkan.
+    
+      - learning_rate: menentukan kontribusi masing-masing model.
+    
+      - random_state: agar hasil dapat direproduksi.
+    
+      Kelebihan:
+      - Meningkatkan akurasi model sederhana.
+    
+      - Cukup efektif untuk dataset kecil sampai menengah.
+    
+      Kekurangan:
+      - Sensitif terhadap outlier dan noise dalam data.
+    
+      - Bisa overfitting jika jumlah estimasi terlalu tinggi.
 
 # Evaluation
 
