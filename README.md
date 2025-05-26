@@ -70,27 +70,27 @@ Berikut adalah penjelasan masing-masing fitur dalam dataset:
 Pada bagian ini, dilakukan beberapa tahapan awal yang dilakukan sebelum pengembangan model, diantaranya:
 1. Load Dataset
 
-  Dataset diupload dari google drive yang dimana sudah didownload dari sumber (Kaggle) agar dapat digunakan untuk identifikasi tingkat kualitas air yang menyimpan data seperti jenis ikan, tingkat ph, suhu, dan tingkat kekeruhan
+    Dataset diupload dari google drive yang dimana sudah didownload dari sumber (Kaggle) agar dapat digunakan untuk identifikasi tingkat kualitas air yang menyimpan data seperti jenis       ikan, tingkat ph, suhu, dan tingkat kekeruhan
 
 2. Pemeriksaan Nilai Kosong
 
-  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
+    Dataset diperiksa untuk mengetahui apakah terdapat nilai yang hilang atau tidak valid. Jika ditemukan, dilakukan penanganan seperti imputasi atau penghapusan baris.
 
 3. Pemeriksaan Nilai Duplikat
 
-  Dataset diperiksa untuk mengetahui apakah terdapat nilai yang Duplikat. Jika ditemukan, dilakukan penanganan seperti penghapusan baris.
+    Dataset diperiksa untuk mengetahui apakah terdapat nilai yang Duplikat. Jika ditemukan, dilakukan penanganan seperti penghapusan baris.
 
 4. Distribusi Data
 
-  Dilakukan visualisasi distribusi nilai untuk fitur numerik (pH, suhu, kekeruhan) untuk memahami pola dan outlier.
+    Dilakukan visualisasi distribusi nilai untuk fitur numerik (pH, suhu, kekeruhan) untuk memahami pola dan outlier.
 
 5. Analisis Korelasi (Univariate Analysis)
 
-  Matriks korelasi dibuat untuk melihat hubungan antar variabel numerik serta potensi pengaruhnya terhadap kualitas air.
+    Matriks korelasi dibuat untuk melihat hubungan antar variabel numerik serta potensi pengaruhnya terhadap kualitas air.
 
 6. Analisis Fitur Kategorikal (Multivariate Analysis)
 
-  Frekuensi jenis ikan dan distribusinya terhadap label kualitas air dianalisis untuk mengetahui pola yang mungkin muncul.
+    Frekuensi jenis ikan dan distribusinya terhadap label kualitas air dianalisis untuk mengetahui pola yang mungkin muncul.
 
 # Data Preparation
 
@@ -101,14 +101,14 @@ Tahap selanjutnya setelah EDA ialah mempersiapkan data untuk proses modelling ya
 Tahapan yang dilakukan dalam data preparation yang dilakukan, diantaranya:
 1. Penanganan Outlier dan Data Duplikat : Langkah pertama dalam data preparation adalah membersihkan data dari nilai yang duplikat dan outlier .Tujuannya adalah memastikan kualitas data yang baik sehingga tidak mengganggu analisis atau model machine learning.
 2. Transformasi Data: Tahap ini dilakukan untuk memperkaya informasi dan menyederhanakan analisis, diantaranya:
-  *  Menghitung rata-rata dan standar deviasi parameter air (ph, temperature, turbidity) berdasarkan masing-masing jenis ikan.
-  *  Menentukan kisaran ideal untuk tiap parameter berdasarkan nilai rata-rata ± standar deviasi.
-  *  Membuat fungsi untuk mengevaluasi apakah setiap baris data sesuai dengan kisaran ideal dari jenis ikan terkait.
-  *  Menambahkan kolom baru yang menunjukkan kondisi kualitas air (misalnya: “ideal” atau “tidak ideal”).
+    *  Menghitung rata-rata dan standar deviasi parameter air (ph, temperature, turbidity) berdasarkan masing-masing jenis ikan.
+    *  Menentukan kisaran ideal untuk tiap parameter berdasarkan nilai rata-rata ± standar deviasi.
+    *  Membuat fungsi untuk mengevaluasi apakah setiap baris data sesuai dengan kisaran ideal dari jenis ikan terkait.
+    *  Menambahkan kolom baru yang menunjukkan kondisi kualitas air (misalnya: “ideal” atau “tidak ideal”).
 3. Encode Data : Data kategorikal seperti jenis ikan diubah menjadi format numerik agar bisa diproses oleh algoritma machine learning menggunakan Label Encoding jika jenis ikan akan diperlakukan sebagai kelas.
 5. Pembagian Data : Setelah data sudah disiapkan sesuai yang diinginkan, Data dibagi menjadi dua bagian:
-  - Training set: Digunakan untuk melatih model (biasanya 70–80% dari data).
-  - Testing set: Digunakan untuk mengevaluasi performa model terhadap data baru (20–30%).
+    - Training set: Digunakan untuk melatih model (biasanya 70–80% dari data).
+    - Testing set: Digunakan untuk mengevaluasi performa model terhadap data baru (20–30%).
 
 
 # Modelling
@@ -120,7 +120,7 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
 
 1. K-Nearest Neighbors (KNN)
 
-  Cara Kerja: KNN mengklasifikasikan data baru berdasarkan kemiripan (jarak) dengan data-data lain di sekitarnya. Model ini menghitung jarak ke k tetangga terdekat dan menentukan label berdasarkan mayoritas tetangga.
+    Cara Kerja: KNN mengklasifikasikan data baru berdasarkan kemiripan (jarak) dengan data-data lain di sekitarnya. Model ini menghitung jarak ke k tetangga terdekat dan menentukan label berdasarkan mayoritas tetangga.
 
   Parameter Utama:
   - n_neighbors: jumlah tetangga yang digunakan untuk klasifikasi.
@@ -139,7 +139,7 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
 
 2. Random Forest
   
-  Cara Kerja: Random Forest merupakan model ensemble yang terdiri dari banyak pohon keputusan (decision tree). Model ini menghasilkan prediksi berdasarkan voting mayoritas dari seluruh pohon yang dibentuk dari subset data dan fitur yang berbeda.
+    Cara Kerja: Random Forest merupakan model ensemble yang terdiri dari banyak pohon keputusan (decision tree). Model ini menghasilkan prediksi berdasarkan voting mayoritas dari seluruh pohon yang dibentuk dari subset data dan fitur yang berbeda.
 
   Parameter Utama:
   - n_estimators: jumlah pohon yang digunakan (default: 100).
@@ -162,7 +162,7 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
 
 3. AdaBoost
 
-  Cara Kerja: AdaBoost (Adaptive Boosting) adalah algoritma boosting yang membentuk model kuat dari beberapa model lemah (weak learners), biasanya decision tree sederhana. Model ini menekankan pada kesalahan dari prediksi sebelumnya dan memperbaikinya pada iterasi berikutnya.
+    Cara Kerja: AdaBoost (Adaptive Boosting) adalah algoritma boosting yang membentuk model kuat dari beberapa model lemah (weak learners), biasanya decision tree sederhana. Model ini menekankan pada kesalahan dari prediksi sebelumnya dan memperbaikinya pada iterasi berikutnya.
 
   Parameter Utama:
   - n_estimators: jumlah model lemah yang akan digabungkan.
@@ -202,7 +202,7 @@ Untuk mengevaluasi performa dari model yang dikembangkan, digunakan beberapa met
 Pemilihan metrik-metrik ini bertujuan untuk memberikan gambaran menyeluruh tentang performa model terhadap berbagai jenis kesalahan klasifikasi, bukan hanya sekadar akurasi.
 
 ## Hasil Evaluasi
-Pada kode diatas, dibuatkan sebuah contoh data baru berupa jenis ikan, tingkat ph, suhu, dan kekeruhan air. Kemudian, data baru tersebut diuji oleh model untuk mendapatkan kualitas air kolam dengan menganalisa tingkat ph, suhu, dan kekeruhan. Hasil yang didapatkan dari kualitas kolam tersebut adalah 'good' yang berarti kualitas air layak digunakan.
+Dari kode yang membuat contoh data baru berupa jenis ikan, tingkat ph, suhu, dan kekeruhan air. Data yang diuji oleh model untuk mendapatkan kualitas air kolam dengan menganalisa tingkat ph, suhu, dan kekeruhan. Hasil yang didapatkan dari kualitas kolam tersebut adalah 'good' yang berarti kualitas air layak digunakan.
 
 #Hubungan Business Understanding
 
