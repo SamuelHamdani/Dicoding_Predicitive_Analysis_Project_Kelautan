@@ -120,7 +120,7 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
 
 1. K-Nearest Neighbors (KNN)
 
-        Cara Kerja: KNN mengklasifikasikan data baru berdasarkan kemiripan (jarak) dengan data-data lain di sekitarnya. Model ini menghitung jarak ke k tetangga terdekat dan menentukan label berdasarkan mayoritas tetangga.
+   Cara Kerja: KNN mengklasifikasikan data baru berdasarkan kemiripan (jarak) dengan data-data lain di sekitarnya. Model ini menghitung jarak ke k tetangga terdekat dan menentukan label berdasarkan mayoritas tetangga.
     
       Parameter Utama:
       - n_neighbors: jumlah tetangga yang digunakan untuk klasifikasi.
@@ -139,7 +139,7 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
 
 2. Random Forest
   
-        Cara Kerja: Random Forest merupakan model ensemble yang terdiri dari banyak pohon keputusan (decision tree). Model ini menghasilkan prediksi berdasarkan voting mayoritas dari seluruh pohon yang dibentuk dari subset data dan fitur yang berbeda.
+   Cara Kerja: Random Forest merupakan model ensemble yang terdiri dari banyak pohon keputusan (decision tree). Model ini menghasilkan prediksi berdasarkan voting mayoritas dari seluruh pohon yang dibentuk dari subset data dan fitur yang berbeda.
     
       Parameter Utama:
       - n_estimators: jumlah pohon yang digunakan (default: 100).
@@ -162,7 +162,7 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
 
 3. AdaBoost
 
-        Cara Kerja: AdaBoost (Adaptive Boosting) adalah algoritma boosting yang membentuk model kuat dari beberapa model lemah (weak learners), biasanya decision tree sederhana. Model ini menekankan pada kesalahan dari prediksi sebelumnya dan memperbaikinya pada iterasi berikutnya.
+   Cara Kerja: AdaBoost (Adaptive Boosting) adalah algoritma boosting yang membentuk model kuat dari beberapa model lemah (weak learners), biasanya decision tree sederhana. Model ini menekankan pada kesalahan dari prediksi sebelumnya dan memperbaikinya pada iterasi berikutnya.
     
       Parameter Utama:
       - n_estimators: jumlah model lemah yang akan digabungkan.
@@ -204,7 +204,7 @@ Pemilihan metrik-metrik ini bertujuan untuk memberikan gambaran menyeluruh tenta
 ## Hasil Evaluasi
 Dari kode yang membuat contoh data baru berupa jenis ikan, tingkat ph, suhu, dan kekeruhan air. Data yang diuji oleh model untuk mendapatkan kualitas air kolam dengan menganalisa tingkat ph, suhu, dan kekeruhan. Hasil yang didapatkan dari kualitas kolam tersebut adalah 'good' yang berarti kualitas air layak digunakan.
 
-#Hubungan Business Understanding
+## Hubungan Business Understanding
 
 | **Aspek**                                                         | **Evaluasi**                                                                                                      |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
