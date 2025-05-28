@@ -101,15 +101,14 @@ Tahap selanjutnya setelah EDA ialah mempersiapkan data untuk proses modelling ya
 Tahapan yang dilakukan dalam data preparation yang dilakukan, diantaranya:
 1. Penanganan Outlier dan Data Duplikat : Langkah pertama dalam data preparation adalah membersihkan data dari nilai yang duplikat dan outlier .Tujuannya adalah memastikan kualitas data yang baik sehingga tidak mengganggu analisis atau model machine learning.
 2. Transformasi Data: Tahap ini dilakukan untuk memperkaya informasi dan menyederhanakan analisis, diantaranya:
-    *  Menghitung rata-rata dan standar deviasi parameter air (ph, temperature, turbidity) berdasarkan masing-masing jenis ikan.
-    *  Menentukan kisaran ideal untuk tiap parameter berdasarkan nilai rata-rata ± standar deviasi.
-    *  Membuat fungsi untuk mengevaluasi apakah setiap baris data sesuai dengan kisaran ideal dari jenis ikan terkait.
-    *  Menambahkan kolom baru yang menunjukkan kondisi kualitas air (misalnya: “ideal” atau “tidak ideal”).
+  *  Menghitung rata-rata dan standar deviasi parameter air (ph, temperature, turbidity) berdasarkan masing-masing jenis ikan.
+  *  Menentukan kisaran ideal untuk tiap parameter (pH, suhu, dan kekeruhan) dengan kisaran global.
+  *  Membuat fungsi untuk mengevaluasi apakah setiap baris data sesuai dengan kisaran ideal dari jenis ikan terkait.
+  *  Menambahkan kolom baru yang menunjukkan kondisi kualitas air (misalnya: “ideal” atau “tidak ideal”).
 3. Encode Data : Data kategorikal seperti jenis ikan diubah menjadi format numerik agar bisa diproses oleh algoritma machine learning menggunakan Label Encoding jika jenis ikan akan diperlakukan sebagai kelas.
 5. Pembagian Data : Setelah data sudah disiapkan sesuai yang diinginkan, Data dibagi menjadi dua bagian:
-    - Training set: Digunakan untuk melatih model (biasanya 70–80% dari data).
-    - Testing set: Digunakan untuk mengevaluasi performa model terhadap data baru (20–30%).
-
+  - Training set: Digunakan untuk melatih model (biasanya 70–80% dari data).
+  - Testing set: Digunakan untuk mengevaluasi performa model terhadap data baru (20–30%).
 
 # Modelling
 
@@ -123,9 +122,9 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
    Cara Kerja: KNN mengklasifikasikan data baru berdasarkan kemiripan (jarak) dengan data-data lain di sekitarnya. Model ini menghitung jarak ke k tetangga terdekat dan menentukan label berdasarkan mayoritas tetangga.
     
       Parameter Utama:
-      - n_neighbors: jumlah tetangga yang digunakan untuk klasifikasi.
+      - n_neighbors=5 (default)
     
-      - metric: jenis jarak yang digunakan (default: euclidean).
+      - metric='minkowski' (default)
     
       Kelebihan:
       - Sederhana dan mudah diimplementasikan.
@@ -142,11 +141,9 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
    Cara Kerja: Random Forest merupakan model ensemble yang terdiri dari banyak pohon keputusan (decision tree). Model ini menghasilkan prediksi berdasarkan voting mayoritas dari seluruh pohon yang dibentuk dari subset data dan fitur yang berbeda.
     
       Parameter Utama:
-      - n_estimators: jumlah pohon yang digunakan (default: 100).
-    
-      - max_depth: kedalaman maksimum tiap pohon.
-    
-      - random_state: penetapan seed untuk replikasi hasil.
+       - n_estimators=100 (default)
+      - max_depth=None (default, tidak dibatasi)
+      - random_state=42
     
       Kelebihan:
       - Memiliki akurasi tinggi dan tahan terhadap overfitting.
@@ -165,11 +162,9 @@ Dalam tahap pengembangan model ini, dilakukan pembandingan performa dari tiga al
    Cara Kerja: AdaBoost (Adaptive Boosting) adalah algoritma boosting yang membentuk model kuat dari beberapa model lemah (weak learners), biasanya decision tree sederhana. Model ini menekankan pada kesalahan dari prediksi sebelumnya dan memperbaikinya pada iterasi berikutnya.
     
       Parameter Utama:
-      - n_estimators: jumlah model lemah yang akan digabungkan.
-    
-      - learning_rate: menentukan kontribusi masing-masing model.
-    
-      - random_state: agar hasil dapat direproduksi.
+      - n_estimators=50 (default)
+      - learning_rate=1.0 (default)
+      - random_state=42
     
       Kelebihan:
       - Meningkatkan akurasi model sederhana.
@@ -202,7 +197,20 @@ Untuk mengevaluasi performa dari model yang dikembangkan, digunakan beberapa met
 Pemilihan metrik-metrik ini bertujuan untuk memberikan gambaran menyeluruh tentang performa model terhadap berbagai jenis kesalahan klasifikasi, bukan hanya sekadar akurasi.
 
 ## Hasil Evaluasi
-Dari kode yang membuat contoh data baru berupa jenis ikan, tingkat ph, suhu, dan kekeruhan air. Data yang diuji oleh model untuk mendapatkan kualitas air kolam dengan menganalisa tingkat ph, suhu, dan kekeruhan. Hasil yang didapatkan dari kualitas kolam tersebut adalah 'good' yang berarti kualitas air layak digunakan.
+
+Pada hasil penjalanan kode diatas, dibuatkan sebuah contoh data baru berupa jenis ikan, tingkat ph, suhu, dan kekeruhan air. Kemudian, data baru tersebut diuji oleh model untuk mendapatkan kualitas air kolam dengan menganalisa tingkat ph, suhu, dan kekeruhan. Hasil yang didapatkan dari kualitas kolam tersebut adalah 'good' yang berarti kualitas air layak digunakan.
+
+Model dievaluasi menggunakan data uji (test set), dengan metrik evaluasi: akurasi, precision, recall, dan f1-score. Model terbaik yang diperoleh adalah Random Forest, dengan hasil evaluasi sebagai berikut:
+
+| Kelas    | Precision | Recall | F1-Score |
+| -------- | --------- | ------ | -------- |
+| Poor     | 1.00      | 0.86   | 0.92     |
+| Good     | 0.96      | 1.00   | 0.98     |
+| Moderate | 0.95      | 0.95   | 0.95     |
+
+Akurasi keseluruhan: 0.9623 (96.23%)
+
+Model mampu mengklasifikasikan kualitas air dengan tingkat akurasi yang sangat tinggi, dengan performa yang seimbang pada ketiga kelas.
 
 ## Hubungan Business Understanding
 
