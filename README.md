@@ -208,7 +208,7 @@ Model dievaluasi menggunakan data uji (test set), dengan metrik evaluasi: akuras
 | Good     | 1.00      | 1.00   | 1.00     |
 | Okay, Needed Care | 0.89      | 0.94   | 0.95     |
 
-Akurasi keseluruhan: 0.9623 (96.23%)
+Akurasi keseluruhan: 0.9033 (90.33%)
 
 Model mampu mengklasifikasikan kualitas air dengan tingkat akurasi yang sangat tinggi, dengan performa yang seimbang pada ketiga kelas.
 
