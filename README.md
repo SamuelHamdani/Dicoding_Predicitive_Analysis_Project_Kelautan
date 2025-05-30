@@ -204,9 +204,9 @@ Model dievaluasi menggunakan data uji (test set), dengan metrik evaluasi: akuras
 
 | Kelas    | Precision | Recall | F1-Score |
 | -------- | --------- | ------ | -------- |
-| Poor     | 1.00      | 0.86   | 0.92     |
-| Good     | 0.96      | 1.00   | 0.98     |
-| Moderate | 0.95      | 0.95   | 0.95     |
+| Bad     | 1.00      | 0.60   | 0.75     |
+| Good     | 1.00      | 1.00   | 1.00     |
+| Okay, Needed Care | 0.89      | 0.94   | 0.95     |
 
 Akurasi keseluruhan: 0.9623 (96.23%)
 
